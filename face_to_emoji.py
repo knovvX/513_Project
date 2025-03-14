@@ -248,19 +248,19 @@ class EmojiGenerator:
         
         # 颜色配置
         self.colors = {
-            "face": (255, 220, 0),  # 黄色表情
+            "face": (255,218,154),  # 黄色表情
             "outline": (0, 0, 0),   # 黑色轮廓
             "eyes": (255, 255, 255),  # 白色眼白
             "pupils": (0, 0, 0),    # 黑色瞳孔
             "mouth": (0, 0, 0),     # 黑色嘴巴
             "tongue": (255, 80, 80) # 粉红色舌头
         }
-        if emotion=='sad':self.colors['face']=(0,0,255)
-        elif emotion=='angry':self.colors['face']=(255,0,0)
-        elif emotion=='surprised':self.colors['face']=(0,255,0)
-        elif emotion=='neutral':self.colors['face']=(255,255,255)
-        elif emotion=='disgusted':self.colors['face']=(0,255,255)
-        elif emotion=='fearful':self.colors['face']=(255,0,255)
+        if emotion=='sad':self.colors['face']=(211,238,255)
+        elif emotion=='angry':self.colors['face']=(255,208,203)
+        elif emotion=='surprised':self.colors['face']=(255,219,251)
+        elif emotion=='neutral':self.colors['face']=(255,230,0)
+        elif emotion=='disgusted':self.colors['face']=(191,255,163)
+        elif emotion=='fearful':self.colors['face']=(223,163,155)
         
     
     def generate_emoji(self, features):
@@ -469,7 +469,7 @@ class EmojiGenerator:
 
 
 def emotion_recognition(image_path):
-    emo = DeepFace.analyze(image_path, actions = ['emotion'])
+    emo = DeepFace.analyze(image_path, actions = ['emotion'],enforce_detection=False,)
     dom=emo[0]['dominant_emotion']
     print(emo)
     return dom
