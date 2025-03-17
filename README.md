@@ -15,4 +15,8 @@ Upload image and enjoy the system
 
 
 
-` `
+Other supplementary files:
+
+`filter-test1.ipynb`: Tests of Dlib.
+
+`shape_predictor_68_face_landmarks.dat`: pre-trained weight files for Dlib model.
